@@ -52,7 +52,8 @@ if __name__ == '__main__':
         for decade in decades:
             # get top 100 players each week (ranking_date)
             all_players_rankings = pd.read_csv(
-                '../../tennis_{}/{}_rankings_{}.csv'.format(gender, gender, decade))
+                '../../tennis_{}/{}_rankings_{}.csv'.format(gender, gender, decade),
+                usecols=['ranking_date','rank','player','points'])
             top_100_players = all_players_rankings.groupby('ranking_date', as_index=False).nth[:100]
 
             # format ranking_date to yyyy-mm-dd
