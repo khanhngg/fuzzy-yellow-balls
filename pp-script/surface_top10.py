@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import csv
 import pandas as pd
 
 
@@ -10,7 +9,8 @@ if __name__ == '__main__':
             record = {'hard': {}, 'clay': {}, 'grass': {}}
             hard, clay, grass = {'player': [], 'win_rate': []}, {
                 'player': [], 'win_rate': []}, {'player': [], 'win_rate': []}
-            df = pd.read_csv('tennis_{}/{}_matches_20{:02d}.csv'.format(j,j,i))
+            df = pd.read_csv(
+                'tennis_{}/{}_matches_20{:02d}.csv'.format(j, j, i))
 
             for x in df.index:
                 winner = df.loc[x, 'winner_name']
@@ -74,8 +74,8 @@ if __name__ == '__main__':
             # print(clay_df.nlargest(10, 'win_rate'))
             # print(grass_df.nlargest(10, 'win_rate'))
             hard_df.nlargest(10, 'win_rate').reset_index(drop=True).to_csv(
-                './surface_top10_{}/{}_hard_top10_20{:02d}.csv'.format(j,j,i))
+                './surface_top10_{}/{}_hard_top10_20{:02d}.csv'.format(j, j, i))
             clay_df.nlargest(10, 'win_rate').reset_index(drop=True).to_csv(
-                './surface_top10_{}/{}_clay_top10_20{:02d}.csv'.format(j,j,i))
+                './surface_top10_{}/{}_clay_top10_20{:02d}.csv'.format(j, j, i))
             grass_df.nlargest(10, 'win_rate').reset_index(drop=True).to_csv(
-                './surface_top10_{}/{}_grass_top10_20{:02d}.csv'.format(j,j,i))
+                './surface_top10_{}/{}_grass_top10_20{:02d}.csv'.format(j, j, i))

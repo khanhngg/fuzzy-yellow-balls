@@ -1,11 +1,31 @@
-player,win_rate,hard_1st_rt_pt_won,hard_2nd_rt_pt_won,hard_bp_convert,hard_df_to_ace,hard_1st_in,hard_1st_pt_won,hard_2nd_pt_won,clay_1st_rt_pt_won,clay_2nd_rt_pt_won,clay_bp_convert,clay_df_to_ace,clay_1st_in,clay_1st_pt_won,clay_2nd_pt_won,grass_1st_rt_pt_won,grass_2nd_rt_pt_won,grass_bp_convert,grass_df_to_ace,grass_1st_in,grass_1st_pt_won,grass_2nd_pt_won
-Venus Williams,100.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Martina Hingis,87.76,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Serena Williams,85.29,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Lindsay Davenport,82.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Monica Seles,75.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Iroda Tulyaganova,71.43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Elena Dementieva,71.43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Arantxa Sanchez Vicario,70.97,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Na Li,70.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mary Pierce,68.42,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,df_to_ace,1st_in,1st_pt_won,2nd_pt_won
+Venus Williams,100.0,hard,0,0,0,0,0,0,0
+Martina Hingis,87.76,hard,0,0,0,0,0,0,0
+Serena Williams,85.29,hard,0,0,0,0,0,0,0
+Lindsay Davenport,82.0,hard,0,0,0,0,0,0,0
+Monica Seles,75.0,hard,0,0,0,0,0,0,0
+Iroda Tulyaganova,71.43,hard,0,0,0,0,0,0,0
+Elena Dementieva,71.43,hard,0,0,0,0,0,0,0
+Arantxa Sanchez Vicario,70.97,hard,0,0,0,0,0,0,0
+Na Li,70.0,hard,0,0,0,0,0,0,0
+Mary Pierce,68.42,hard,0,0,0,0,0,0,0
+Venus Williams,100.0,clay,0,0,0,0,0,0,0
+Martina Hingis,87.76,clay,0,0,0,0,0,0,0
+Serena Williams,85.29,clay,0,0,0,0,0,0,0
+Lindsay Davenport,82.0,clay,0,0,0,0,0,0,0
+Monica Seles,75.0,clay,0,0,0,0,0,0,0
+Iroda Tulyaganova,71.43,clay,0,0,0,0,0,0,0
+Elena Dementieva,71.43,clay,0,0,0,0,0,0,0
+Arantxa Sanchez Vicario,70.97,clay,0,0,0,0,0,0,0
+Na Li,70.0,clay,0,0,0,0,0,0,0
+Mary Pierce,68.42,clay,0,0,0,0,0,0,0
+Venus Williams,100.0,grass,0,0,0,0,0,0,0
+Martina Hingis,87.76,grass,0,0,0,0,0,0,0
+Serena Williams,85.29,grass,0,0,0,0,0,0,0
+Lindsay Davenport,82.0,grass,0,0,0,0,0,0,0
+Monica Seles,75.0,grass,0,0,0,0,0,0,0
+Iroda Tulyaganova,71.43,grass,0,0,0,0,0,0,0
+Elena Dementieva,71.43,grass,0,0,0,0,0,0,0
+Arantxa Sanchez Vicario,70.97,grass,0,0,0,0,0,0,0
+Na Li,70.0,grass,0,0,0,0,0,0,0
+Mary Pierce,68.42,grass,0,0,0,0,0,0,0

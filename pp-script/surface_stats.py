@@ -86,12 +86,20 @@ if __name__ == '__main__':
     for year in range(0, 23):
         for surface in ['hard', 'clay', 'grass']:
             for gender in ['atp', 'wta']:
-                top_players = pd.read_csv(
+                players = pd.read_csv(
                     './surface_top10_{}/{}_{}_top10_20{:02d}.csv'.format(gender, gender, surface, year))
                 matches = pd.read_csv(
                     './tennis_{}/{}_matches_20{:02d}.csv'.format(gender, gender, year))
 
                 stats = {'hard': {}, 'clay': {}, 'grass': {}}
+
+                st_rt_pt_won = []
+                nd_rt_pt_won = []
+                bp_convert = []
+                df_to_ace = []
+                st_in = []
+                st_pt_won = []
+                nd_pt_won = []
 
                 new_stats = {
                     'hard': {
@@ -125,7 +133,7 @@ if __name__ == '__main__':
 
                 matches.dropna(subset=['w_svpt'], inplace=True)
 
-                for i, r in top_players.iterrows():
+                for i, r in players.iterrows():
                     player = r['player']
                     for index, row in matches.iterrows():
                         v1st, v2nd, bpcnv, df2a, fsin, fswon, sswon = 0, 0, 0, 0, 0, 0, 0
@@ -167,7 +175,7 @@ if __name__ == '__main__':
                                          fsin, fswon, sswon, stats, player)
 
                 for i in stats.keys():
-                    for j in top_players['player']:
+                    for j in players['player']:
                         try:
                             new_stats[i]['1st_rt_pt_won'].append(0 if len(
                                 stats[i][j]['1st_rt_pt_won']) == 0 else round(mean(stats[i][j]['1st_rt_pt_won']), 2))
@@ -192,19 +200,26 @@ if __name__ == '__main__':
                             new_stats[i]['1st_pt_won'].append(0)
                             new_stats[i]['2nd_pt_won'].append(0)
 
-                    top_players['{}_1st_rt_pt_won'.format(
-                        i)] = new_stats[i]['1st_rt_pt_won']
-                    top_players['{}_2nd_rt_pt_won'.format(
-                        i)] = new_stats[i]['2nd_rt_pt_won']
-                    top_players['{}_bp_convert'.format(
-                        i)] = new_stats[i]['bp_convert']
-                    top_players['{}_df_to_ace'.format(
-                        i)] = new_stats[i]['df_to_ace']
-                    top_players['{}_1st_in'.format(i)] = new_stats[i]['1st_in']
-                    top_players['{}_1st_pt_won'.format(
-                        i)] = new_stats[i]['1st_pt_won']
-                    top_players['{}_2nd_pt_won'.format(
-                        i)] = new_stats[i]['2nd_pt_won']
+                    st_rt_pt_won.extend(new_stats[i]['1st_rt_pt_won'])
+                    nd_rt_pt_won.extend(new_stats[i]['2nd_rt_pt_won'])
+                    bp_convert.extend(new_stats[i]['bp_convert'])
+                    df_to_ace.extend(new_stats[i]['df_to_ace'])
+                    st_in.extend(new_stats[i]['1st_in'])
+                    st_pt_won.extend(new_stats[i]['1st_pt_won'])
+                    nd_pt_won.extend(new_stats[i]['2nd_pt_won'])
+
+                top_players = pd.concat([players]*3, ignore_index=True)
+                if not year == 20:
+                    top_players['surface'] = ['hard' for j in range(
+                        10)]+['clay' for j in range(10)]+['grass' for j in range(10)]
+
+                top_players['1st_rt_pt_won'] = st_rt_pt_won
+                top_players['2nd_rt_pt_won'] = nd_rt_pt_won
+                top_players['bp_convert'] = bp_convert
+                top_players['df_to_ace'] = df_to_ace
+                top_players['1st_in'] = st_in
+                top_players['1st_pt_won'] = st_pt_won
+                top_players['2nd_pt_won'] = nd_pt_won
 
                 top_players.pop('Unnamed: 0')
                 top_players.to_csv('./surface_top10_{}/{}_{}_top10_20{:02d}.csv'.format(
