@@ -1,31 +1,31 @@
-player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,df_to_ace,1st_in,1st_pt_won,2nd_pt_won
-Serena Williams,100.0,hard,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Kim Clijsters,89.39,hard,40.76,59.35,51.82,129.71,68.03,72.27,50.15
-Maria Fernanda Alves,88.24,hard,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Justine Henin,87.5,hard,53.45,61.26,59.69,193.0,51.19,70.45,52.61
-Venus Williams,83.33,hard,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Joana Cortez,76.47,hard,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Kildine Chevalier,75.0,hard,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Lindsay Davenport,75.0,hard,45.49,61.86,52.27,100.83,57.89,71.36,56.12
-Jennifer Capriati,69.44,hard,51.41,60.01,54.23,195.55,59.58,70.16,42.6
-Meghann Shaughnessy,68.29,hard,32.82,55.53,60.53,164.28,53.87,73.39,54.57
-Serena Williams,100.0,clay,53.84,62.68,63.99,116.11,56.97,70.92,53.57
-Kim Clijsters,89.39,clay,47.97,63.04,48.13,73.95,60.5,65.86,47.78
-Maria Fernanda Alves,88.24,clay,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Justine Henin,87.5,clay,50.27,58.42,61.16,163.0,51.44,71.14,51.54
-Venus Williams,83.33,clay,40.3,69.23,47.02,282.16,55.68,72.26,46.97
-Joana Cortez,76.47,clay,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Kildine Chevalier,75.0,clay,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Lindsay Davenport,75.0,clay,47.5,61.12,68.82,313.75,51.4,70.82,41.94
-Jennifer Capriati,69.44,clay,47.58,72.66,53.69,225.0,48.5,63.63,53.28
-Meghann Shaughnessy,68.29,clay,33.86,52.38,47.22,79.96,49.22,71.43,45.2
-Serena Williams,100.0,grass,39.58,57.59,54.32,30.27,65.82,76.74,51.54
-Kim Clijsters,89.39,grass,47.07,66.63,74.96,18.2,71.55,74.66,45.06
-Maria Fernanda Alves,88.24,grass,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Justine Henin,87.5,grass,36.44,56.37,46.31,114.58,58.15,77.73,54.98
-Venus Williams,83.33,grass,41.06,66.15,46.96,183.19,54.93,78.38,48.19
-Joana Cortez,76.47,grass,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Kildine Chevalier,75.0,grass,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-Lindsay Davenport,75.0,grass,37.19,57.27,60.83,,69.45,73.97,48.47
-Jennifer Capriati,69.44,grass,37.07,60.46,51.54,168.33,63.16,77.97,66.17
-Meghann Shaughnessy,68.29,grass,27.08,60.0,25.0,100.0,48.33,62.07,83.33
+player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,hld_rate,brk_rate,1st_pt_won,2nd_pt_won
+Serena Williams,100.0,hard,0.0,0.0,0.0,0,0,0.0,0.0
+Kim Clijsters,89.39,hard,40.76,59.35,51.82,0,0,72.27,50.15
+Maria Fernanda Alves,88.24,hard,0.0,0.0,0.0,0,0,0.0,0.0
+Justine Henin,87.5,hard,53.45,61.26,59.69,0,0,70.45,52.61
+Venus Williams,83.33,hard,0.0,0.0,0.0,0,0,0.0,0.0
+Joana Cortez,76.47,hard,0.0,0.0,0.0,0,0,0.0,0.0
+Kildine Chevalier,75.0,hard,0.0,0.0,0.0,0,0,0.0,0.0
+Lindsay Davenport,75.0,hard,45.49,61.86,52.27,0,0,71.36,56.12
+Jennifer Capriati,69.44,hard,51.41,60.01,54.23,0,0,70.16,42.6
+Meghann Shaughnessy,68.29,hard,32.82,55.53,60.53,0,0,73.39,54.57
+Serena Williams,100.0,clay,53.84,62.68,63.99,0,0,70.92,53.57
+Kim Clijsters,89.39,clay,47.97,63.04,48.13,0,0,65.86,47.78
+Maria Fernanda Alves,88.24,clay,0.0,0.0,0.0,0,0,0.0,0.0
+Justine Henin,87.5,clay,50.27,58.42,61.16,0,0,71.14,51.54
+Venus Williams,83.33,clay,40.3,69.23,47.02,0,0,72.26,46.97
+Joana Cortez,76.47,clay,0.0,0.0,0.0,0,0,0.0,0.0
+Kildine Chevalier,75.0,clay,0.0,0.0,0.0,0,0,0.0,0.0
+Lindsay Davenport,75.0,clay,47.5,61.12,68.82,0,0,70.82,41.94
+Jennifer Capriati,69.44,clay,47.58,72.66,53.69,0,0,63.63,53.28
+Meghann Shaughnessy,68.29,clay,33.86,52.38,47.22,0,0,71.43,45.2
+Serena Williams,100.0,grass,39.58,57.59,54.32,0,0,76.74,51.54
+Kim Clijsters,89.39,grass,47.07,66.63,74.96,0,0,74.66,45.06
+Maria Fernanda Alves,88.24,grass,0.0,0.0,0.0,0,0,0.0,0.0
+Justine Henin,87.5,grass,36.44,56.37,46.31,0,0,77.73,54.98
+Venus Williams,83.33,grass,41.06,66.15,46.96,0,0,78.38,48.19
+Joana Cortez,76.47,grass,0.0,0.0,0.0,0,0,0.0,0.0
+Kildine Chevalier,75.0,grass,0.0,0.0,0.0,0,0,0.0,0.0
+Lindsay Davenport,75.0,grass,37.19,57.27,60.83,0,0,73.97,48.47
+Jennifer Capriati,69.44,grass,37.07,60.46,51.54,0,0,77.97,52.72
+Meghann Shaughnessy,68.29,grass,27.08,60.0,25.0,0,0,62.07,83.33

@@ -1,31 +1,31 @@
-player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,df_to_ace,1st_in,1st_pt_won,2nd_pt_won
-Maria Sharapova,95.0,hard,41.53,57.17,51.82,205.33,60.65,66.44,46.55
-Carla Suarez Navarro,79.17,hard,39.96,54.98,54.54,83.66,71.28,60.84,52.54
-Andrea Petkovic,79.17,hard,36.54,52.53,46.22,185.16,65.11,60.72,43.64
-Simona Halep,78.26,hard,41.96,59.74,56.26,124.64,60.88,63.66,55.68
-Sara Errani,76.0,hard,39.85,59.43,46.43,23.81,82.23,53.25,28.62
-Eugenie Bouchard,75.0,hard,38.39,59.74,48.42,131.61,58.8,65.64,51.7
-Serena Williams,75.0,hard,41.18,57.73,51.86,51.83,58.22,77.1,52.05
-Ana Ivanovic,73.68,hard,40.6,59.13,48.96,142.34,59.54,67.28,48.37
-Agnieszka Radwanska,73.33,hard,43.92,60.94,53.49,69.65,64.42,62.78,49.4
-Jelena Jankovic,72.73,hard,39.08,59.66,52.15,160.16,63.1,65.56,51.3
-Maria Sharapova,95.0,clay,44.97,64.17,56.22,227.65,62.61,70.32,51.84
-Carla Suarez Navarro,79.17,clay,46.19,59.2,56.17,,72.04,61.17,42.52
-Andrea Petkovic,79.17,clay,41.77,59.51,53.52,101.16,71.6,62.24,50.37
-Simona Halep,78.26,clay,45.69,61.43,56.37,134.21,62.22,69.6,48.8
-Sara Errani,76.0,clay,47.31,54.72,54.96,,81.02,59.47,44.16
-Eugenie Bouchard,75.0,clay,39.38,61.5,54.26,134.15,60.82,66.32,48.44
-Serena Williams,75.0,clay,49.1,57.68,53.46,89.93,62.04,74.5,53.69
-Ana Ivanovic,73.68,clay,40.27,58.49,55.98,101.81,63.46,65.4,54.39
-Agnieszka Radwanska,73.33,clay,42.53,57.97,49.64,40.15,67.01,63.04,53.78
-Jelena Jankovic,72.73,clay,38.92,58.5,48.39,122.14,63.61,67.91,49.47
-Maria Sharapova,95.0,grass,44.34,68.65,66.75,116.67,65.23,76.09,47.69
-Carla Suarez Navarro,79.17,grass,42.57,52.71,58.89,27.5,67.06,65.75,49.76
-Andrea Petkovic,79.17,grass,44.64,56.66,58.89,87.67,67.42,61.25,49.55
-Simona Halep,78.26,grass,43.27,52.81,60.96,155.0,56.01,73.89,59.16
-Sara Errani,76.0,grass,31.52,57.61,42.86,3.5,78.88,59.22,15.68
-Eugenie Bouchard,75.0,grass,39.04,51.14,46.89,96.88,65.17,66.68,48.18
-Serena Williams,75.0,grass,42.27,65.08,64.29,81.94,65.05,76.03,48.6
-Ana Ivanovic,73.68,grass,41.12,64.26,52.28,47.29,60.88,76.47,54.17
-Agnieszka Radwanska,73.33,grass,34.74,62.82,43.75,58.57,72.18,69.91,41.17
-Jelena Jankovic,72.73,grass,32.1,36.03,50.0,250.0,61.66,65.94,30.9
+player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,hld_rate,brk_rate,1st_pt_won,2nd_pt_won
+Maria Sharapova,95.0,hard,41.53,57.17,51.82,0,0,66.44,46.55
+Carla Suarez Navarro,79.17,hard,39.96,54.98,54.54,0,0,60.84,44.55
+Andrea Petkovic,79.17,hard,36.54,52.53,46.22,0,0,60.72,43.64
+Simona Halep,78.26,hard,41.96,59.74,56.26,0,0,63.66,53.29
+Sara Errani,76.0,hard,39.85,59.43,46.43,0,0,53.25,37.67
+Eugenie Bouchard,75.0,hard,38.39,59.74,48.42,0,0,65.64,51.7
+Serena Williams,75.0,hard,41.18,57.73,51.86,0,0,77.1,52.05
+Ana Ivanovic,73.68,hard,40.6,59.13,48.96,0,0,67.28,48.37
+Agnieszka Radwanska,73.33,hard,43.92,60.94,53.49,0,0,62.78,47.24
+Jelena Jankovic,72.73,hard,39.08,59.66,52.15,0,0,65.56,51.3
+Maria Sharapova,95.0,clay,44.97,64.17,56.22,0,0,70.32,47.99
+Carla Suarez Navarro,79.17,clay,46.19,59.2,56.17,0,0,61.17,48.0
+Andrea Petkovic,79.17,clay,41.77,59.51,53.52,0,0,62.24,45.39
+Simona Halep,78.26,clay,45.69,61.43,56.37,0,0,69.6,48.8
+Sara Errani,76.0,clay,47.31,54.72,54.96,0,0,59.47,44.16
+Eugenie Bouchard,75.0,clay,39.38,61.5,54.26,0,0,66.32,48.44
+Serena Williams,75.0,clay,49.1,57.68,53.46,0,0,74.5,48.15
+Ana Ivanovic,73.68,clay,40.27,58.49,55.98,0,0,65.4,54.39
+Agnieszka Radwanska,73.33,clay,42.53,57.97,49.64,0,0,63.04,47.84
+Jelena Jankovic,72.73,clay,38.92,58.5,48.39,0,0,67.91,49.47
+Maria Sharapova,95.0,grass,44.34,68.65,66.75,0,0,76.09,47.69
+Carla Suarez Navarro,79.17,grass,42.57,52.71,58.89,0,0,65.75,49.76
+Andrea Petkovic,79.17,grass,44.64,56.66,58.89,0,0,61.25,49.55
+Simona Halep,78.26,grass,43.27,52.81,60.96,0,0,73.89,59.16
+Sara Errani,76.0,grass,31.52,57.61,42.86,0,0,59.22,15.68
+Eugenie Bouchard,75.0,grass,39.04,51.14,46.89,0,0,66.68,48.18
+Serena Williams,75.0,grass,42.27,65.08,64.29,0,0,76.03,48.6
+Ana Ivanovic,73.68,grass,41.12,64.26,52.28,0,0,76.47,54.17
+Agnieszka Radwanska,73.33,grass,34.74,62.82,43.75,0,0,69.91,41.17
+Jelena Jankovic,72.73,grass,32.1,36.03,50.0,0,0,65.94,30.9

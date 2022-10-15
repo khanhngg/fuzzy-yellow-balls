@@ -1,31 +1,31 @@
-player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,df_to_ace,1st_in,1st_pt_won,2nd_pt_won
-Justine Henin,93.33,hard,45.48,59.25,51.01,176.54,54.26,72.12,53.07
-Tatiana Golovin,84.62,hard,38.97,59.94,46.95,129.84,64.27,65.67,47.58
-Jelena Jankovic,84.38,hard,41.34,60.6,51.42,127.15,69.0,65.29,48.13
-Ana Ivanovic,84.21,hard,39.37,57.38,49.78,109.08,55.87,70.21,58.09
-Svetlana Kuznetsova,80.0,hard,36.8,55.73,48.29,79.51,65.02,67.79,64.41
-Agnes Szavay,78.95,hard,36.49,59.72,42.62,88.49,58.89,69.52,51.07
-Elena Dementieva,75.0,hard,45.24,61.02,54.25,332.09,54.97,67.91,49.83
-Dinara Safina,72.22,hard,38.23,55.44,54.53,140.31,62.1,63.86,54.93
-Lucie Safarova,71.43,hard,35.53,52.55,46.11,106.87,60.37,68.81,48.46
-Anabel Medina Garrigues,70.83,hard,36.03,54.43,47.27,83.46,61.68,62.01,82.02
-Justine Henin,93.33,clay,49.94,60.04,62.07,295.83,52.8,70.36,48.89
-Tatiana Golovin,84.62,clay,49.38,55.35,45.06,80.74,61.8,72.61,52.23
-Jelena Jankovic,84.38,clay,48.43,62.38,56.26,72.26,75.23,63.58,44.46
-Ana Ivanovic,84.21,clay,45.6,57.74,57.49,103.06,58.04,70.38,54.48
-Svetlana Kuznetsova,80.0,clay,40.13,56.05,49.76,58.67,63.8,65.73,54.58
-Agnes Szavay,78.95,clay,53.7,59.67,62.26,113.25,56.9,69.1,56.66
-Elena Dementieva,75.0,clay,42.19,63.92,60.34,427.82,59.43,60.83,45.3
-Dinara Safina,72.22,clay,38.19,60.3,47.57,231.93,64.06,62.13,51.34
-Lucie Safarova,71.43,clay,40.49,58.72,47.98,153.67,57.79,71.3,50.39
-Anabel Medina Garrigues,70.83,clay,41.37,55.49,53.09,57.4,62.42,63.5,58.49
-Justine Henin,93.33,grass,45.76,64.4,55.78,133.73,61.92,76.81,61.28
-Tatiana Golovin,84.62,grass,34.0,47.14,62.5,250.0,65.09,61.54,44.1
-Jelena Jankovic,84.38,grass,42.9,57.58,48.89,103.45,66.87,69.73,49.49
-Ana Ivanovic,84.21,grass,35.32,58.36,35.02,124.86,55.75,72.78,10.9
-Svetlana Kuznetsova,80.0,grass,33.47,56.4,49.77,62.5,68.23,70.98,54.93
-Agnes Szavay,78.95,grass,32.14,57.42,27.78,93.34,49.59,75.37,43.64
-Elena Dementieva,75.0,grass,43.45,52.12,52.97,293.17,56.53,55.1,43.16
-Dinara Safina,72.22,grass,37.52,52.04,46.48,78.49,64.88,66.53,47.73
-Lucie Safarova,71.43,grass,28.61,52.44,50.57,115.73,61.51,74.83,59.88
-Anabel Medina Garrigues,70.83,grass,34.75,48.26,78.57,112.5,64.31,64.68,-25.0
+player,win_rate,surface,1st_rt_pt_won,2nd_rt_pt_won,bp_convert,hld_rate,brk_rate,1st_pt_won,2nd_pt_won
+Justine Henin,93.33,hard,45.48,59.25,51.01,0,0,72.12,53.07
+Tatiana Golovin,84.62,hard,38.97,59.94,46.95,0,0,65.67,45.94
+Jelena Jankovic,84.38,hard,41.34,60.6,51.42,0,0,65.29,45.42
+Ana Ivanovic,84.21,hard,39.37,57.38,49.78,0,0,70.21,51.47
+Svetlana Kuznetsova,80.0,hard,36.8,55.73,48.29,0,0,67.79,45.42
+Agnes Szavay,78.95,hard,36.49,59.72,42.62,0,0,69.52,51.07
+Elena Dementieva,75.0,hard,45.24,61.02,54.25,0,0,67.91,49.83
+Dinara Safina,72.22,hard,38.23,55.44,54.53,0,0,63.86,47.7
+Lucie Safarova,71.43,hard,35.53,52.55,46.11,0,0,68.81,48.46
+Anabel Medina Garrigues,70.83,hard,36.03,54.43,47.27,0,0,62.01,44.06
+Justine Henin,93.33,clay,49.94,60.04,62.07,0,0,70.36,48.89
+Tatiana Golovin,84.62,clay,49.38,55.35,45.06,0,0,72.61,52.23
+Jelena Jankovic,84.38,clay,48.43,62.38,56.26,0,0,63.58,44.46
+Ana Ivanovic,84.21,clay,45.6,57.74,57.49,0,0,70.38,50.64
+Svetlana Kuznetsova,80.0,clay,40.13,56.05,49.76,0,0,65.73,48.64
+Agnes Szavay,78.95,clay,53.7,59.67,62.26,0,0,69.1,56.66
+Elena Dementieva,75.0,clay,42.19,63.92,60.34,0,0,60.83,45.3
+Dinara Safina,72.22,clay,38.19,60.3,47.57,0,0,62.13,51.34
+Lucie Safarova,71.43,clay,40.49,58.72,47.98,0,0,71.3,50.39
+Anabel Medina Garrigues,70.83,clay,41.37,55.49,53.09,0,0,63.5,53.15
+Justine Henin,93.33,grass,45.76,64.4,55.78,0,0,76.81,61.28
+Tatiana Golovin,84.62,grass,34.0,47.14,62.5,0,0,61.54,44.1
+Jelena Jankovic,84.38,grass,42.9,57.58,48.89,0,0,69.73,49.49
+Ana Ivanovic,84.21,grass,35.32,58.36,35.02,0,0,72.78,50.56
+Svetlana Kuznetsova,80.0,grass,33.47,56.4,49.77,0,0,70.98,54.93
+Agnes Szavay,78.95,grass,32.14,57.42,27.78,0,0,75.37,43.64
+Elena Dementieva,75.0,grass,43.45,52.12,52.97,0,0,55.1,43.16
+Dinara Safina,72.22,grass,37.52,52.04,46.48,0,0,66.53,47.73
+Lucie Safarova,71.43,grass,28.61,52.44,50.57,0,0,74.83,59.88
+Anabel Medina Garrigues,70.83,grass,34.75,48.26,78.57,0,0,64.68,50.0
