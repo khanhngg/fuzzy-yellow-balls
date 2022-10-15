@@ -8,3 +8,9 @@ node_modules
 !.env.example
 .vercel
 .output
+
+# Ignore some of the output CSV
+/rankings_atp/*
+!/rankings_atp/atp_rankings_all.csv
+/rankings_wta/*
+!/rankings_wta/wta_rankings_all.csv
