@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 import pandas as pd
-import os
-import glob
 
 '''
 Get the top 100 tennis players for every week through decades 90s -> current
