@@ -1,6 +1,6 @@
 <script lang="ts">
   import Header from '$lib/header/Header.svelte';
-  import '../app.css';
+  import '../app.postcss';
 </script>
 
 <Header />
@@ -9,8 +9,9 @@
   <slot />
 </main>
 
-<footer>
-  <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+<footer class="mt-auto">
+  <p><a href="https://github.com/khanhngg/fuzzy-yellow-balls" target="_blank">GitHub</a></p>
+  <p>&#xa9; 2022. All rights reserved.</p>
 </footer>
 
 <style>
