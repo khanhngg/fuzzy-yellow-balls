@@ -9,7 +9,7 @@
 </svelte:head>
 
 <div class="content">
-  <h1>Matches</h1>
+  <h1 class="text-gray-900 dark:text-gray-200">Matches</h1>
 
 </div>
 
