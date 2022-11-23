@@ -9,7 +9,7 @@
 </svelte:head>
 
 <section>
-  <h1>
+  <h1 class="text-gray-900 dark:text-gray-200">
     Explore interactive tennis visualizations
   </h1>
 </section>
@@ -33,7 +33,7 @@
     <Icon icon="game-icons:tennis-court" class="icon" />
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Surfaces</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
-      See how top players one each surfaces perform
+      See how top players on each surfaces perform
     </p>
   </Card>
   <Card class="text-center" size="md" href="/rankings">

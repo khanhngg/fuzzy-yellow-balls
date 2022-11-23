@@ -11,7 +11,7 @@
 
 <footer class="mt-auto">
   <p><a href="https://github.com/khanhngg/fuzzy-yellow-balls" target="_blank">GitHub</a></p>
-  <p>&#xa9; 2022. All rights reserved.</p>
+  <p class="text-gray-900 dark:text-gray-400">&#xa9; 2022. All rights reserved.</p>
 </footer>
 
 <style>
