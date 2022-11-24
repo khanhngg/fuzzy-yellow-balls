@@ -76,7 +76,7 @@
     width: 50%;
   }
   .chart-p1 :global(div) {
-    font: 10px sans-serif;
+    font: .75rem sans-serif;
     background-color: steelblue;
     text-align: left;
     padding: 3px;
@@ -84,7 +84,7 @@
     color: white;
   }
   .chart-p2 :global(div) {
-    font: 10px sans-serif;
+    font: .75rem sans-serif;
     background-color: steelblue;
     text-align: right;
     padding: 3px;

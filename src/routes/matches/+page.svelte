@@ -11,6 +11,8 @@
   let selectedMatches: any[] = [];
 
   const getMatches = async () => {
+    matches = [];
+    selectedMatches = [];
     const res = await fetch(`/matches?player1=${player1}&player2=${player2}`);
     const data = await res.json();
 
@@ -33,11 +35,10 @@
         };
       });
     }
-    // console.log(matches);
   };
 
   const handleSelect = (event: any) => {
-    console.log(event.detail);
+    // console.log(event.detail);
 
     if (event.detail) {
       selectedMatches = event.detail;
