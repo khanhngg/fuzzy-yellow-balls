@@ -41,6 +41,8 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.0",
     "@types/d3": "^7.4.0",
-    "d3": "^7.6.1"
+    "d3": "^7.6.1",
+    "mysql2": "^2.3.3",
+    "svelte-select": "^4.4.7"
   }
 }
