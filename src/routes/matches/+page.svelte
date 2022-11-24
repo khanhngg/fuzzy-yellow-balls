@@ -2,21 +2,48 @@
   import type { PageData } from './$types';
   import { Button, Input, Tabs, TabItem } from 'flowbite-svelte';
   import Select from 'svelte-select';
+  import Overview from './Overview.svelte';
 
   let player1: string;
   let player2: string;
 
-  let matches: string[] | any[] = [];
-  let selectedMatches: string[] | any[] = [];
+  let matches: any[] = [];
+  let selectedMatches: any[] = [];
 
   const getMatches = async () => {
     const res = await fetch(`/matches?player1=${player1}&player2=${player2}`);
-    matches = await res.json();
+    const data = await res.json();
+
+    // console.log(data);
+    if (data.length) {
+      if (data[0]['Player_1'].toLowerCase().includes(player1.toLowerCase())) {
+        player1 = data[0]['Player_1'];
+        player2 = data[0]['Player_2'];
+      } else {
+        player1 = data[0]['Player_2'];
+        player2 = data[0]['Player_1'];
+      }
+
+      matches = data.map((element: { match_id: any; Player_1: any; Player_2: any }) => {
+        return {
+          value: element.match_id,
+          label: element.match_id,
+          player1: element.Player_1,
+          player2: element.Player_2
+        };
+      });
+    }
     // console.log(matches);
   };
 
   const handleSelect = (event: any) => {
-    selectedMatches = event.detail.map((value: { value: any }) => value.value);
+    console.log(event.detail);
+
+    if (event.detail) {
+      selectedMatches = event.detail;
+    } else {
+      selectedMatches = [];
+    }
   };
 </script>
 
@@ -46,9 +73,10 @@
     </div>
   {/if}
   {#if 0 < selectedMatches.length && selectedMatches.length < 4}
-    <Tabs>
+    <Tabs style="pill">
       <TabItem open>
         <span slot="title">Overview</span>
+        <Overview {player1} {player2} matches={selectedMatches} />
       </TabItem>
       <TabItem>
         <span slot="title">Serve</span>

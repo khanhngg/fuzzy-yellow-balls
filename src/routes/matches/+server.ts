@@ -8,8 +8,8 @@ export const GET: RequestHandler = async ({ url }) => {
 
     console.log({ player1, player2 });
 
-    const [rows] = await db.execute(`SELECT match_id FROM match_meta WHERE (UPPER(Player_1) LIKE ? AND UPPER(Player_2) LIKE ?) OR (UPPER(Player_2) LIKE ? AND UPPER(Player_1) LIKE ?)`, [player1, player2, player1, player2])
-    console.log({ rows, count: rows.length });
+    const [rows] = await db.execute(`SELECT match_id, Player_1, Player_2 FROM match_meta WHERE (UPPER(Player_1) LIKE ? AND UPPER(Player_2) LIKE ?) OR (UPPER(Player_2) LIKE ? AND UPPER(Player_1) LIKE ?)`, [player1, player2, player1, player2])
+    // console.log({ rows, count: rows.length });
 
-    return new Response(JSON.stringify(rows.map(value => value.match_id)))
+    return new Response(JSON.stringify(rows))
 }
