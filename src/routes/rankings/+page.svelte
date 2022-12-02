@@ -1,7 +1,7 @@
 <script lang="ts">
   // import type { PageData } from './$types';
   // export let data: PageData;
-
+  // import testdata from '$lib/data/rankings_atp/atp_rankings_all.csv?raw'
   import { onMount } from 'svelte';
   import * as d3 from 'd3';
   let data = [30, 86, 168, 281, 303, 365];
@@ -30,7 +30,8 @@
       anotherData = await d3.csv('../data/data.csv')
     }
   )
-  $: console.log(anotherData)
+  // $: console.log(anotherData)
+  // $: console.log(testdata) // todo use papaparse
 </script>
 
 <svelte:head>
@@ -39,7 +40,9 @@
 </svelte:head>
 
 <div class="content">
-  <h1>Rankings</h1>
+  <h1 class="text-gray-900 dark:text-gray-200">
+    Rankings
+  </h1>
 
   <!-- TODO: Remove/Update this - Example only -->
   <h2>Example D3 stuff</h2>

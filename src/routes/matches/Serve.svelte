@@ -169,7 +169,7 @@
   }
 </script>
 
-<h2 class="text-center text-xl">Serve</h2>
+<h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Serve</h2>
 <h3 class="text-center text-base">Total Points</h3>
 <SplitBarChart p1data={p1Total} p2data={p2Total} max={totalMax} neutral={true} />
 <h3 class="text-center text-base">Points Won</h3>

@@ -1,10 +1,11 @@
 <script lang="ts">
+  import { DarkMode } from 'flowbite-svelte';
   import { page } from '$app/stores';
   import logo from './fuzzy-yellow-bird.png';
 </script>
 
 <header>
-  <div class="corner">
+  <div class="corner pl-3 pt-1">
     <a href="/">
       <img src={logo} alt="Fuzzy Yellow Bird Logo" />
     </a>
@@ -16,19 +17,19 @@
     </svg>
     <ul>
       <li class:active={$page.url.pathname === '/'}>
-        <a href="/">Home</a>
+        <a class="text-gray-300" href="/">Home</a>
       </li>
       <li class:active={$page.url.pathname === '/players'}>
-        <a href="/players">Players</a>
+        <a class="text-gray-300" href="/players">Players</a>
       </li>
       <li class:active={$page.url.pathname === '/matches'}>
-        <a href="/matches">Matches</a>
+        <a class="text-gray-300" href="/matches">Matches</a>
       </li>
       <li class:active={$page.url.pathname === '/surfaces'}>
-        <a href="/surfaces">Surfaces</a>
+        <a class="text-gray-300" href="/surfaces">Surfaces</a>
       </li>
       <li class:active={$page.url.pathname === '/rankings'}>
-        <a href="/rankings">Rankings</a>
+        <a class="text-gray-300" href="/rankings">Rankings</a>
       </li>
     </ul>
     <svg viewBox="0 0 2 3" aria-hidden="true">
@@ -36,8 +37,8 @@
     </svg>
   </nav>
 
-  <div class="corner">
-    <!-- TODO put something else here? github link? -->
+  <div class="corner pt-1">
+    <DarkMode btnClass="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed left-0 top-8 z-50 header-button" />
   </div>
 </header>
 
@@ -66,10 +67,14 @@
     object-fit: contain;
   }
 
+  .corner :global(.header-button) {
+    position: unset;
+  }
+
   nav {
     display: flex;
     justify-content: center;
-    --background: rgba(255, 255, 255, 0.7);
+    --background: rgba(22, 25, 32, 0.9);
   }
 
   svg {
@@ -117,7 +122,6 @@
     height: 100%;
     align-items: center;
     padding: 0 1em;
-    color: var(--heading-color);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;

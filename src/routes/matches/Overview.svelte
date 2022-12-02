@@ -200,7 +200,7 @@
   }
 </script>
 
-<h2 class="text-center text-xl">Overview</h2>
+<h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Overview</h2>
 <h3 class="text-center text-base">Aces</h3>
 <SplitBarChart p1data={p1Aces} p2data={p2Aces} max={acesMax} />
 <h3 class="text-center text-base">Double Faults</h3>
@@ -229,4 +229,5 @@
 />
 
 <style>
+
 </style>

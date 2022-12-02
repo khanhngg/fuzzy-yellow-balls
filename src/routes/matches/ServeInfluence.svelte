@@ -34,7 +34,10 @@
 
     let slices: { id: string; values: { shot: number; influence: number }[] }[] = [];
     data
-      .sort((a: { player: number; serve: number; }, b: { player: number; serve: number; }) => a.player - b.player || a.serve - b.serve)
+      .sort(
+        (a: { player: number; serve: number }, b: { player: number; serve: number }) =>
+          a.player - b.player || a.serve - b.serve
+      )
       .forEach((element: any) => {
         slices.push({
           id: `${element['player'] === 1 ? p1Initials : p2Initials} ${
@@ -126,6 +129,8 @@
       .text(function (d) {
         return d.id;
       });
+
+      d3.selectAll('.serie_label').style('color', '#e5e7eb');
   };
 
   $: {
@@ -133,32 +138,12 @@
   }
 </script>
 
-<h2 class="text-center text-xl">Serve Influence</h2>
+<h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Serve Influence</h2>
 <div bind:this={leg} class="flex" />
 <div bind:this={chart} class="container" />
 
 <style>
   .container :global(div) {
     font: 0.75rem sans-serif;
-  }
-
-  .axis line {
-    stroke: #706f6f;
-    stroke-width: 0.5;
-    shape-rendering: crispEdges;
-  }
-
-  /* axis contour */
-  .axis path {
-    stroke: #706f6f;
-    stroke-width: 0.7;
-    shape-rendering: crispEdges;
-  }
-
-  /* axis text */
-  .axis text {
-    fill: #2b2929;
-    font-family: Georgia;
-    font-size: 120%;
   }
 </style>

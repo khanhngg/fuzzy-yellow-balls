@@ -55,8 +55,8 @@
   <meta name="description" content="Matches page" />
 </svelte:head>
 
-<div class="content">
-  <h1>Matches</h1>
+<div class="content text-gray-900 dark:text-gray-200">
+  <h1 class="text-gray-900 dark:text-gray-200">Matches</h1>
   <form on:submit|preventDefault={getMatches} class="">
     <div class="flex flex-row gap-3 justify-between items-center mb-3">
       <div class="w-full">
@@ -72,7 +72,13 @@
   {#if matches.length}
     <div class="mb-3">
       <label for="selectedMatches">Select matches (up to 3)</label>
-      <Select items={matches} isMulti={true} on:select={handleSelect} />
+      <div class="text-gray-700">
+        <Select
+          items={matches}
+          isMulti={true}
+          on:select={handleSelect}
+        />
+      </div>
     </div>
   {/if}
   {#if 0 < selectedMatches.length && selectedMatches.length < 4}
