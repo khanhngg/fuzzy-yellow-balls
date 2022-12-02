@@ -3,6 +3,8 @@
   import { Button, Input, Tabs, TabItem } from 'flowbite-svelte';
   import Select from 'svelte-select';
   import Overview from './Overview.svelte';
+  import Serve from './Serve.svelte';
+  import ServeInfluence from './ServeInfluence.svelte';
 
   let player1: string;
   let player2: string;
@@ -81,10 +83,12 @@
       </TabItem>
       <TabItem>
         <span slot="title">Serve</span>
+        <Serve {player1} {player2} matches={selectedMatches} />
       </TabItem>
       {#if selectedMatches.length === 1}
         <TabItem>
           <span slot="title">Serve Influence</span>
+          <ServeInfluence {player1} {player2} match={selectedMatches[0]} />
         </TabItem>
       {/if}
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import * as d3 from 'd3';
   import { onMount } from 'svelte';
   import SplitBarChart from './SplitBarChart.svelte';
   export let player1: string;
@@ -30,14 +29,10 @@
   let p1UnforcedErrors: { match: any; value: any }[];
   let p2UnforcedErrors: { match: any; value: any }[];
 
-  onMount(() => {
-    fetchOverview();
-  });
-
-  const fetchOverview = async () => {
+  const fetchOverview = async (m: any[]) => {
     const res = await fetch('/api/matches/overview', {
       method: 'POST',
-      body: JSON.stringify(matches.map((value) => value.label))
+      body: JSON.stringify(m.map((value) => value.label))
     });
     const data: any[] = await res.json();
     console.log(data);
@@ -48,13 +43,13 @@
     unforcedMax = Math.max(...data.map((value) => value.unforced));
 
     const p1Overview = data.filter((value, index) => {
-      return player1 === matches[Math.floor(index / 2)]['player1']
+      return player1 === m[Math.floor(index / 2)]['player1']
         ? value.player === 1
         : value.player === 2;
     });
 
     const p2Overview = data.filter((value, index) => {
-      return player2 === matches[Math.floor(index / 2)]['player1']
+      return player2 === m[Math.floor(index / 2)]['player1']
         ? value.player === 1
         : value.player === 2;
     });
@@ -201,33 +196,37 @@
   };
 
   $: {
-    console.log(matches);
-    fetchOverview();
+    fetchOverview(matches);
   }
 </script>
 
-<h2 class="text-center">Overview</h2>
-<h3 class="text-center">Aces</h3>
+<h2 class="text-center text-xl">Overview</h2>
+<h3 class="text-center text-base">Aces</h3>
 <SplitBarChart p1data={p1Aces} p2data={p2Aces} max={acesMax} />
-<h3 class="text-center">Double Faults</h3>
-<SplitBarChart p1data={p1DoubleFaults} p2data={p2DoubleFaults} max={dfMax} />
+<h3 class="text-center text-base">Double Faults</h3>
+<SplitBarChart p1data={p1DoubleFaults} p2data={p2DoubleFaults} max={dfMax} reverse={true} />
 <hr class="mt-3 mb-3" />
-<h3 class="text-center">1st Serve In</h3>
+<h3 class="text-center text-base">1st Serve In</h3>
 <SplitBarChart p1data={p1FirstIn} p2data={p2FirstIn} percentage={true} />
-<h3 class="text-center">1st Serve Points Won</h3>
+<h3 class="text-center text-base">1st Serve Points Won</h3>
 <SplitBarChart p1data={p1FirstWon} p2data={p2FirstWon} percentage={true} />
-<h3 class="text-center">2nd Serve Points Won</h3>
+<h3 class="text-center text-base">2nd Serve Points Won</h3>
 <SplitBarChart p1data={p1SecondWon} p2data={p2SecondWon} percentage={true} />
 <hr class="mt-3 mb-3" />
-<h3 class="text-center">Break Points Saved</h3>
+<h3 class="text-center text-base">Break Points Saved</h3>
 <SplitBarChart p1data={p1BreakPointSaved} p2data={p2BreakPointSaved} percentage={true} />
-<h3 class="text-center">Break Points Won</h3>
+<h3 class="text-center text-base">Break Points Won</h3>
 <SplitBarChart p1data={p1BreakPointWon} p2data={p2BreakPointWon} percentage={true} />
 <hr class="mt-3 mb-3" />
-<h3 class="text-center">Winners</h3>
+<h3 class="text-center text-base">Winners</h3>
 <SplitBarChart p1data={p1Winners} p2data={p2Winners} max={winnersMax} />
-<h3 class="text-center">Unforced Errors</h3>
-<SplitBarChart p1data={p1UnforcedErrors} p2data={p2UnforcedErrors} max={unforcedMax} />
+<h3 class="text-center text-base">Unforced Errors</h3>
+<SplitBarChart
+  p1data={p1UnforcedErrors}
+  p2data={p2UnforcedErrors}
+  max={unforcedMax}
+  reverse={true}
+/>
 
 <style>
 </style>

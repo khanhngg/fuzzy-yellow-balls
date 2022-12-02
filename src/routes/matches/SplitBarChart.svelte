@@ -3,6 +3,8 @@
   export let p1data: any[];
   export let p2data: any[];
   export let max: number = 100;
+  export let neutral: boolean = false;
+  export let reverse: boolean = false;
   export let percentage: boolean = false;
 
   let container: HTMLDivElement;
@@ -24,7 +26,10 @@
         return d[0].value === 0 ? '10px' : `${((d[0].value / max) * container.clientWidth) / 2}px`;
       })
       .style('background-color', (d) => {
-        return d[0].value < d[1].value && 'dimgrey';
+        return (
+          !neutral &&
+          (reverse ? d[0].value > d[1].value && 'dimgrey' : d[0].value < d[1].value && 'dimgrey')
+        );
       })
       .text((d) => {
         return d[0].value === 0
@@ -43,7 +48,10 @@
         return d[1].value === 0 ? '10px' : `${((d[1].value / max) * container.clientWidth) / 2}px`;
       })
       .style('background-color', (d) => {
-        return d[0].value > d[1].value && 'dimgrey';
+        return (
+          !neutral &&
+          (reverse ? d[0].value < d[1].value && 'dimgrey' : d[0].value > d[1].value && 'dimgrey')
+        );
       })
       .text((d) => {
         return d[1].value === 0
@@ -76,7 +84,7 @@
     width: 50%;
   }
   .chart-p1 :global(div) {
-    font: .75rem sans-serif;
+    font: 0.75rem sans-serif;
     background-color: steelblue;
     text-align: left;
     padding: 3px;
@@ -84,7 +92,7 @@
     color: white;
   }
   .chart-p2 :global(div) {
-    font: .75rem sans-serif;
+    font: 0.75rem sans-serif;
     background-color: steelblue;
     text-align: right;
     padding: 3px;

@@ -21,7 +21,7 @@ USE `fuzzy_yellow_balls` ;
 -- Table `fuzzy_yellow_balls`.`match_meta`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`match_meta` (
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `Player_1` VARCHAR(27) NOT NULL,
   `Player_2` VARCHAR(27) NOT NULL,
   `Pl_1_hand` VARCHAR(2) NOT NULL,
@@ -48,7 +48,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`match_overview` (
   `overview_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `set` VARCHAR(5) NOT NULL,
   `serve_pts` INT NOT NULL,
@@ -76,7 +76,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`match_overview` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 33121
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -86,7 +85,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`netpoint` (
   `netpoint_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `row` VARCHAR(16) NOT NULL,
   `net_pts` INT NOT NULL,
@@ -105,7 +104,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`netpoint` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 35504
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -115,7 +113,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`return_depth` (
   `return_depth_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `row` VARCHAR(5) NOT NULL,
   `returnable` INT NOT NULL,
@@ -135,7 +133,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`return_depth` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 164661
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -145,7 +142,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`return_outcome` (
   `return_outcome_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `row` VARCHAR(5) NOT NULL,
   `pts` INT NOT NULL,
@@ -164,7 +161,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`return_outcome` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 190454
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -174,7 +170,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`serve_basic` (
   `serve_basic_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `set` VARCHAR(5) NOT NULL,
   `pts` INT NOT NULL,
@@ -194,7 +190,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`serve_basic` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 27661
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -204,7 +199,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`serve_influence` (
   `serve_influence_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `serve` INT NOT NULL,
   `pts` INT NOT NULL,
@@ -226,7 +221,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`serve_influence` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 18443
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -236,7 +230,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`shot_direction` (
   `shot_direction_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `row` VARCHAR(8) NOT NULL,
   `crosscourt` INT NOT NULL,
@@ -252,7 +246,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`shot_direction` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 36416
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
@@ -262,7 +255,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`shotdir_outcome` (
   `shotdir_outcome_id` INT NOT NULL AUTO_INCREMENT,
-  `match_id` VARCHAR(81) NOT NULL,
+  `match_id` VARCHAR(100) NOT NULL,
   `player` INT NOT NULL,
   `hand` VARCHAR(8) NOT NULL,
   `direction` VARCHAR(15) NOT NULL,
@@ -281,7 +274,6 @@ CREATE TABLE IF NOT EXISTS `fuzzy_yellow_balls`.`shotdir_outcome` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 104059
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
