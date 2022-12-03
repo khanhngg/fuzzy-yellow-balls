@@ -1,10 +1,12 @@
 <script lang="ts">
+  import Select from 'svelte-select';
   import SplitBarChart from './SplitBarChart.svelte';
   export let player1: string;
   export let player2: string;
   export let matches: any = {};
 
-  const filter = ['Overview', 'Return Depth'];
+  const items = ['Overview', 'Return Depth', 'Return Type', 'Serve Type'];
+  let filter: number;
 
   let p1Return: {
     Total: any[];
@@ -630,9 +632,37 @@
     console.log({ p1Return, p2Return });
   };
 
+  const handleSelect = ({ detail }: { detail: { index: number } }) => {
+    filter = detail.index;
+  };
+
   $: {
     fetchReturn(matches);
   }
 </script>
 
 <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Return</h2>
+<div class="text-gray-900 px-3 my-3">
+  <Select {items} on:select={handleSelect} />
+</div>
+{#if filter === 0}
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Total</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">VS 1st Serve</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">VS 2nd Serve</h2>
+{:else if filter === 1}
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Shallow</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deep</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Very Deep</h2>
+{:else if filter === 2}
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Forehand</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Backhand</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Drive</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Slice</h2>
+{:else}
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deuce Wide</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ad Wide</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deuce Body</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ad Body</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deuce T</h2>
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ad T</h2>
+{/if}
