@@ -31,7 +31,7 @@
       body: JSON.stringify(m.map((value) => value.label))
     });
     const data: any[] = await res.json();
-    console.log(data);
+    // console.log(data);
 
     totalMax = Math.max(...data.map((value) => value.pts));
     acesMax = Math.max(...data.map((value) => value.aces));

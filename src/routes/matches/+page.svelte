@@ -5,6 +5,7 @@
   import Overview from './Overview.svelte';
   import Serve from './Serve.svelte';
   import ServeInfluence from './ServeInfluence.svelte';
+  import Return from './Return.svelte';
 
   let player1: string;
   let player2: string;
@@ -40,8 +41,6 @@
   };
 
   const handleSelect = (event: any) => {
-    // console.log(event.detail);
-
     if (event.detail) {
       selectedMatches = event.detail;
     } else {
@@ -73,11 +72,7 @@
     <div class="mb-3">
       <label for="selectedMatches">Select matches (up to 3)</label>
       <div class="text-gray-700">
-        <Select
-          items={matches}
-          isMulti={true}
-          on:select={handleSelect}
-        />
+        <Select items={matches} isMulti={true} on:select={handleSelect} />
       </div>
     </div>
   {/if}
@@ -100,6 +95,20 @@
 
       <TabItem>
         <span slot="title">Return</span>
+
+        <Return
+          {player1}
+          {player2}
+          matches={selectedMatches
+            .sort((a, b) => a.label - b.label)
+            .reduce(
+              (obj, item) => ({
+                ...obj,
+                [item.value]: { player1: item.player1, player2: item.player2 }
+              }),
+              {}
+            )}
+        />
       </TabItem>
       <TabItem>
         <span slot="title">Net Points</span>

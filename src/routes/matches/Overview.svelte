@@ -35,7 +35,7 @@
       body: JSON.stringify(m.map((value) => value.label))
     });
     const data: any[] = await res.json();
-    console.log(data);
+    // console.log(data);
 
     acesMax = Math.max(...data.map((value) => value.aces));
     dfMax = Math.max(...data.map((value) => value.dfs));

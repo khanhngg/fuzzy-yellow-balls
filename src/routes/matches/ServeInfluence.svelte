@@ -17,8 +17,8 @@
   let chart: HTMLDivElement;
   let leg: HTMLDivElement;
 
-  const width = 960;
-  const height = 500;
+  const width = 1080;
+  const height = 640;
   const margin = 5;
   const padding = 5;
   const adj = 30;
@@ -57,7 +57,7 @@
           ]
         });
       });
-    console.log(slices);
+    // console.log(slices);
 
     const xLabel = ['1+', '2+', '3+', '4+', '5+', '6+', '7+', '8+', '9+', '10+'];
 
