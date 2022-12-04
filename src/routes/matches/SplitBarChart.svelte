@@ -22,9 +22,11 @@
       .data(allData)
       .enter()
       .append('div')
+      .attr('class', 'flex flex-col justify-center')
       .style('width', (d) => {
         return d[0].value === 0 ? '10px' : `${((d[0].value / max) * container.clientWidth) / 2}px`;
       })
+      .style('height', '33px')
       .style('background-color', (d) => {
         return (
           !neutral &&
@@ -44,9 +46,11 @@
       .data(allData)
       .enter()
       .append('div')
+      .attr('class', 'flex flex-col justify-center')
       .style('width', (d) => {
         return d[1].value === 0 ? '10px' : `${((d[1].value / max) * container.clientWidth) / 2}px`;
       })
+      .style('height', '33px')
       .style('background-color', (d) => {
         return (
           !neutral &&
@@ -64,7 +68,7 @@
 
   $: {
     // console.log(p1data, p2data);
-    if (p1data && p2data) {
+    if (p1data && p2data && p1div && p2div) {
       drawChart(p1data, p2data);
     }
   }
@@ -72,10 +76,10 @@
 
 <div class="flex justify-center" bind:this={container}>
   <div class="chart-container">
-    <div bind:this={p1div} class="chart-p1 flex flex-col items-end" />
+    <div bind:this={p1div} class="chart-p1 flex flex-col items-end text-gray-900" />
   </div>
   <div class="chart-container">
-    <div bind:this={p2div} class="chart-p2 flex flex-col items-start" />
+    <div bind:this={p2div} class="chart-p2 flex flex-col items-start text-gray-900" />
   </div>
 </div>
 

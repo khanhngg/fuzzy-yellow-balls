@@ -1,12 +1,13 @@
 <script lang="ts">
   import Select from 'svelte-select';
+  import ReturnChart from './ReturnChart.svelte';
   import SplitBarChart from './SplitBarChart.svelte';
   export let player1: string;
   export let player2: string;
   export let matches: any = {};
 
   const items = ['Overview', 'Return Depth', 'Return Type', 'Serve Type'];
-  let filter: number;
+  let filter: number = 0;
 
   let p1Return: {
     Total: any[];
@@ -26,7 +27,7 @@
     deuceBody: any[];
     adBody: any[];
     deuceT: any[];
-    wideT: any[];
+    adT: any[];
   };
 
   let p2Return: {
@@ -47,7 +48,7 @@
     deuceBody: any[];
     adBody: any[];
     deuceT: any[];
-    wideT: any[];
+    adT: any[];
   };
 
   const fetchReturn = async (m: any) => {
@@ -329,7 +330,7 @@
           }),
           {}
         ),
-      wideT: p1Data
+      adT: p1Data
         .filter((value) => value.row === '6A')
         .reduce(
           (obj, item) => ({
@@ -601,7 +602,7 @@
           }),
           {}
         ),
-      wideT: p2Data
+      adT: p2Data
         .filter((value) => value.row === '6A')
         .reduce(
           (obj, item) => ({
@@ -617,19 +618,7 @@
           {}
         )
     };
-
-    // p1Data.forEach((value) => {
-    //   try {
-    //     p1Return[value['row']].push(value);
-    //   } catch (error) {}
-    // });
-
-    // p2Data.forEach((value) => {
-    //   try {
-    //     p2Return[value['row']].push(value);
-    //   } catch (error) {}
-    // });
-    console.log({ p1Return, p2Return });
+    // console.log({ p1Return, p2Return });
   };
 
   const handleSelect = ({ detail }: { detail: { index: number } }) => {
@@ -642,27 +631,96 @@
 </script>
 
 <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Return</h2>
+<label for="selectedMatches">Select a category</label>
 <div class="text-gray-900 px-3 my-3">
   <Select {items} on:select={handleSelect} />
 </div>
 {#if filter === 0}
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Total</h2>
+  <ReturnChart p1Data={p1Return && p1Return.Total} p2Data={p2Return && p2Return.Total} {matches} />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">VS 1st Serve</h2>
+  <ReturnChart p1Data={p1Return && p1Return.v1st} p2Data={p2Return && p2Return.v1st} {matches} />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">VS 2nd Serve</h2>
+  <ReturnChart p1Data={p1Return && p1Return.v2nd} p2Data={p2Return && p2Return.v2nd} {matches} />
 {:else if filter === 1}
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Shallow</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.shallow}
+    p2Data={p2Return && p2Return.shallow}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deep</h2>
+  <ReturnChart p1Data={p1Return && p1Return.deep} p2Data={p2Return && p2Return.deep} {matches} />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Very Deep</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.veryDeep}
+    p2Data={p2Return && p2Return.veryDeep}
+    {matches}
+  />
 {:else if filter === 2}
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Forehand</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.forehand}
+    p2Data={p2Return && p2Return.forehand}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Backhand</h2>
-  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Drive</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.backhand}
+    p2Data={p2Return && p2Return.backhand}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
+  <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ground Stroke</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.groundStroke}
+    p2Data={p2Return && p2Return.groundStroke}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Slice</h2>
-{:else}
+  <ReturnChart p1Data={p1Return && p1Return.Slice} p2Data={p2Return && p2Return.Slice} {matches} />
+{:else if filter === 3}
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deuce Wide</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.deuceWide}
+    p2Data={p2Return && p2Return.deuceWide}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ad Wide</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.adWide}
+    p2Data={p2Return && p2Return.adWide}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deuce Body</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.deuceBody}
+    p2Data={p2Return && p2Return.deuceBody}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ad Body</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.adBody}
+    p2Data={p2Return && p2Return.adBody}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Deuce T</h2>
+  <ReturnChart
+    p1Data={p1Return && p1Return.deuceT}
+    p2Data={p2Return && p2Return.deuceT}
+    {matches}
+  />
+  <hr class="mt-3 mb-3" />
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Ad T</h2>
+  <ReturnChart p1Data={p1Return && p1Return.adT} p2Data={p2Return && p2Return.adT} {matches} />
 {/if}

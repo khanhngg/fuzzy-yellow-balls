@@ -113,7 +113,7 @@
 
     lines
       .append('text')
-      .attr('class', 'serie_label')
+      .attr('class', 'fill-gray-900 dark:fill-gray-200')
       .datum(function (d) {
         return {
           id: d.id,
@@ -129,8 +129,6 @@
       .text(function (d) {
         return d.id;
       });
-
-      d3.selectAll('.serie_label').style('color', '#e5e7eb');
   };
 
   $: {
