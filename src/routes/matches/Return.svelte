@@ -1,7 +1,5 @@
 <script lang="ts">
-  import Select from 'svelte-select';
   import ReturnChart from './ReturnChart.svelte';
-  import SplitBarChart from './SplitBarChart.svelte';
   export let player1: string;
   export let player2: string;
   export let matches: any = {};
@@ -621,10 +619,6 @@
     // console.log({ p1Return, p2Return });
   };
 
-  const handleSelect = ({ detail }: { detail: { index: number } }) => {
-    filter = detail.index;
-  };
-
   $: {
     fetchReturn(matches);
   }
@@ -633,7 +627,15 @@
 <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Return</h2>
 <label for="selectedMatches">Select a category</label>
 <div class="text-gray-900 px-3 my-3">
-  <Select {items} on:select={handleSelect} />
+  <select
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    id="category"
+    bind:value={filter}
+  >
+    {#each items as item, i}
+      <option value={i}>{item}</option>
+    {/each}
+  </select>
 </div>
 {#if filter === 0}
   <h2 class="text-center text-xl text-gray-900 dark:text-gray-200">Total</h2>

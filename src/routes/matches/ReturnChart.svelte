@@ -102,17 +102,11 @@
     }
   };
 
-  $: {
-    if (p1Data && p2Data) {
-      console.log({ p1Data, p2Data });
-
-      populateData(matches);
-    }
-  }
+  $: if (p1Data && p2Data) populateData(matches);
 </script>
 
 <h3 class="text-center text-base">Total Points</h3>
-<SplitBarChart p1data={p1Point} p2data={p2Point} max={pointMax} />
+<SplitBarChart p1data={p1Point} p2data={p2Point} max={pointMax} neutral={true} />
 <h3 class="text-center text-base">Points Won</h3>
 <SplitBarChart p1data={p1PointWon} p2data={p2PointWon} percentage={true} />
 <h3 class="text-center text-base">In Play</h3>
@@ -120,4 +114,4 @@
 <h3 class="text-center text-base">In Play Won</h3>
 <SplitBarChart p1data={p1InPlayWon} p2data={p2InPlayWon} percentage={true} />
 <h3 class="text-center text-base">Average Rally Length</h3>
-<SplitBarChart p1data={p1AvgRally} p2data={p2AvgRally} max={avgRallyMax} />
+<SplitBarChart p1data={p1AvgRally} p2data={p2AvgRally} max={avgRallyMax} neutral={true} />

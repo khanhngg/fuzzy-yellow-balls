@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import SplitBarChart from './SplitBarChart.svelte';
   export let player1: string;
   export let player2: string;

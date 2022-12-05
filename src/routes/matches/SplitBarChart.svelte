@@ -66,12 +66,7 @@
       });
   };
 
-  $: {
-    // console.log(p1data, p2data);
-    if (p1data && p2data && p1div && p2div) {
-      drawChart(p1data, p2data);
-    }
-  }
+  $: if (p1data && p2data && p1div && p2div) drawChart(p1data, p2data);
 </script>
 
 <div class="flex justify-center" bind:this={container}>

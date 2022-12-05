@@ -6,6 +6,8 @@
   import Serve from './Serve.svelte';
   import ServeInfluence from './ServeInfluence.svelte';
   import Return from './Return.svelte';
+  import NetPoint from './NetPoint.svelte';
+  import ShotDirection from './ShotDirection.svelte';
 
   let player1: string;
   let player2: string;
@@ -112,13 +114,24 @@
       </TabItem>
       <TabItem>
         <span slot="title">Net Points</span>
-      </TabItem>
-      <TabItem>
-        <span slot="title">Key Points</span>
+        <NetPoint
+          {player1}
+          {player2}
+          matches={selectedMatches
+            .sort((a, b) => a.label - b.label)
+            .reduce(
+              (obj, item) => ({
+                ...obj,
+                [item.value]: { player1: item.player1, player2: item.player2 }
+              }),
+              {}
+            )}
+        />
       </TabItem>
       {#if selectedMatches.length === 1}
         <TabItem>
           <span slot="title">Shot Direction</span>
+          <ShotDirection {player1} {player2} match={selectedMatches[0]} />
         </TabItem>
       {/if}
     </Tabs>
@@ -128,7 +141,7 @@
 <style>
   .content {
     width: 100%;
-    max-width: var(--column-width);
+    max-width: 100vw;
     margin: var(--column-margin-top) auto 0 auto;
   }
 </style>

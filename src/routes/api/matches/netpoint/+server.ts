@@ -7,9 +7,9 @@ export const POST: RequestHandler = async ({ request }) => {
 
     console.log({ matches });
 
-    const [rows] = await db.execute(`SELECT * FROM match_overview WHERE match_id IN (${Array(matches.length).fill('?').join(',')})`, matches)
+    const [rows] = await db.execute(`SELECT * FROM netpoint WHERE match_id IN (${Array(matches.length).fill('?').join(',')})`, matches)
 
     // console.log(rows.filter(row => row['set'] === 'Total'));
 
-    return new Response(JSON.stringify((rows as never[]).filter(row => row['set'] === 'Total')))
+    return new Response(JSON.stringify((rows as never[]).filter(row => row['row'] === 'NetPoints')))
 }
