@@ -157,6 +157,7 @@
       .selectAll('rect')
       .data(nodes)
       .join('rect')
+      .attr('class', 'dark:fill-gray-200')
       .attr('x', (d) => d.x0)
       .attr('y', (d) => d.y0)
       .attr('height', (d) => d.y1 - d.y0)
@@ -174,12 +175,13 @@
       .attr('stroke', (d) => color(d.names[0]))
       .attr('stroke-width', (d) => d.width)
       .attr('class', 'mix-blend-hard-light dark:mix-blend-lighten')
+      // .attr('class', 'opacity-75')
       .append('title')
       .text((d) => `${d.names.join(' → ')}\n${d.value.toLocaleString()}`);
 
     svg
       .append('g')
-      // .style('font', '10px sans-serif')
+      .style('font', '10px sans-serif')
       .selectAll('text')
       .data(nodes)
       .join('text')
@@ -187,7 +189,7 @@
       .attr('y', (d) => (d.y1 + d.y0) / 2)
       .attr('dy', '0.35em')
       .attr('text-anchor', (d) => (d.x0 < width / 2 ? 'start' : 'end'))
-      .attr('class', 'text-md fill-gray-900 dark:fill-gray-200 dark:drop-shadow-lg')
+      .attr('class', 'text-xl font-extrabold stroke-white stroke-[0.25] dark:font-[1000] fill-gray-900 dark:fill-gray-100 dark:stroke-black dark:stroke-[0.6]')
       .text((d) => d.name)
       .append('tspan')
       .text((d) => ` ${d.value.toLocaleString()}`);
@@ -201,7 +203,7 @@
   }
 
   const color = d3
-    .scaleOrdinal(['Forehand', 'Backhand', 'Slice'], ['#1f77b4', '#d62728', '#ff7f0e'])
+    .scaleOrdinal(['Forehand', 'Backhand', 'Slice'], ['#1f77b4', '#d62728', '#2ca02c'])
     .unknown('#ccc');
 </script>
 
