@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PageData } from './$types';
+  import Icon from '@iconify/svelte';
   import { Button, Input, Tabs, TabItem } from 'flowbite-svelte';
   import Select from 'svelte-select';
   import Overview from './Overview.svelte';
@@ -14,6 +14,7 @@
   let player2: string;
 
   let matches: any[] = [];
+  let results: any[] = [];
   let selectedMatches: any[] = [];
 
   const getMatches = async () => {
@@ -46,8 +47,14 @@
   const handleSelect = (event: any) => {
     if (event.detail) {
       selectedMatches = event.detail;
+      fetchMetches(
+        event.detail.map((value: { label: any }) => value.label).sort(),
+        player1,
+        player2
+      );
     } else {
       selectedMatches = [];
+      results = [];
     }
   };
 
@@ -55,7 +62,7 @@
     { detail }: { detail: { index: number; label: string; value: string } },
     player: number
   ) => {
-    console.log({ detail, player });
+    // console.log({ detail, player });
     switch (player) {
       case 1:
         player1 = detail.value;
@@ -66,6 +73,15 @@
       default:
         break;
     }
+  };
+
+  const fetchMetches = async (matches: any, player1: string, player2: string) => {
+    const res = await fetch('/api/matches/search', {
+      method: 'POST',
+      body: JSON.stringify({ matches, player1, player2 })
+    });
+    results = (await res.json()).sort((a, b) => a.match_id - b.match_id);
+    // console.log(results);
   };
 </script>
 
@@ -104,6 +120,22 @@
       <div class="text-gray-700">
         <Select items={matches} isMulti={true} on:select={handleSelect} />
       </div>
+    </div>
+  {/if}
+  {#if 0 < results.length && results.length < 4}
+    <div class="flex flex-col flex-start items-center">
+      {#each results as result}
+        <div class="text-xl">{result.match_id}</div>
+        <div class="w-full flex flex-row justify-between mb-3 text-lg">
+          <div style={`visibility: ${result.winner === player2 && 'hidden'};`}>
+            <Icon icon="charm:trophy" color="lime" />
+          </div>
+          <div>{result.score}</div>
+          <div style={`visibility: ${result.winner === player1 && 'hidden'};`}>
+            <Icon icon="charm:trophy" color="lime" />
+          </div>
+        </div>
+      {/each}
     </div>
   {/if}
   {#if 0 < selectedMatches.length && selectedMatches.length < 4}

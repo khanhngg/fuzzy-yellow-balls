@@ -54,7 +54,14 @@
       method: 'POST',
       body: JSON.stringify(Object.keys(m))
     });
-    const data: any[] = await res.json();
+    const data: any[] = (await res.json()).sort((a, b) => {
+      let x = a.match_id;
+      let y = b.match_id;
+      if (x < y) return -1;
+      if (x > y) return 1;
+      return 0;
+    });
+    // console.log(data);
 
     const p1Data = data
       .filter((value) => {

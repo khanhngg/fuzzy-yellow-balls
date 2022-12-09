@@ -96,8 +96,8 @@
     };
     // console.log(parameters);
     let margin = { top: 10, right: 130, bottom: 180, left: 40 },
-      width = 800 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom;
+      width = 992 - margin.left - margin.right,
+      height = 700 - margin.top - margin.bottom;
 
     // create the svg object
     let svg = d3
