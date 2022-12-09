@@ -1,13 +1,13 @@
 <script lang="ts">
   import Icon from '@iconify/svelte';
-  import { Button, Input, Tabs, TabItem } from 'flowbite-svelte';
+  import { Button, Tabs, TabItem } from 'flowbite-svelte';
   import Select from 'svelte-select';
-  import Overview from './Overview.svelte';
-  import Serve from './Serve.svelte';
-  import ServeInfluence from './ServeInfluence.svelte';
-  import Return from './Return.svelte';
-  import NetPoint from './NetPoint.svelte';
-  import ShotDirection from './ShotDirection.svelte';
+  import Overview from '$lib/matches/Overview.svelte';
+  import Serve from '$lib/matches/Serve.svelte';
+  import ServeInfluence from '$lib/matches/ServeInfluence.svelte';
+  import Return from '$lib/matches/Return.svelte';
+  import NetPoint from '$lib/matches/NetPoint.svelte';
+  import ShotDirection from '$lib/matches/ShotDirection.svelte';
   import loadOptions from '$lib/players';
 
   let player1: string;

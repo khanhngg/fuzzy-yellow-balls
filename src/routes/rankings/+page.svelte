@@ -1,7 +1,11 @@
 <script lang="ts">
+  import type { PageData } from './$types';
   // DATA
-  import atp from '$lib/data/rankings_atp/atp_rankings_all.json';
-  import wta from '$lib/data/rankings_wta/wta_rankings_all.json';
+  export let data: PageData;
+  // console.log(data);
+  const { atp, wta } = data;
+  // import atp from '$lib/data/rankings_atp/atp_rankings_all.json';
+  // import wta from '$lib/data/rankings_wta/wta_rankings_all.json';
 
   // COMPONENTS
   import { Tabs, TabItem } from 'flowbite-svelte';
@@ -14,9 +18,7 @@
 </svelte:head>
 
 <section class="content">
-  <h1 class="text-gray-700 dark:text-gray-200 pb-6">
-    Rankings
-  </h1>
+  <h1 class="text-gray-700 dark:text-gray-200 pb-6">Rankings</h1>
 
   <Tabs
     class="w-full justify-center"
