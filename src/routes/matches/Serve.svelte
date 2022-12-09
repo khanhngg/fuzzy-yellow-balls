@@ -26,6 +26,7 @@
   let p2Wide: { match: any; value: any }[];
 
   const fetchServe = async (m: any[]) => {
+    console.log(JSON.stringify(m.map((value) => value.label)))
     const res = await fetch('/api/matches/serve', {
       method: 'POST',
       body: JSON.stringify(m.map((value) => value.label))
