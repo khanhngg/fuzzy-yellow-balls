@@ -9,7 +9,7 @@ export const connection = () => {
             host: 'localhost',
             user: 'root',
             password: DB_PASS,
-            database: 'fuzzy_yellow_balls'
+            database: 'fuzzy_yellow_ball'
         })
     }
     return mysqlconn
