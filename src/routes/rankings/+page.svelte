@@ -1,37 +1,11 @@
 <script lang="ts">
-  // import type { PageData } from './$types';
-  // export let data: PageData;
-  // import testdata from '$lib/data/rankings_atp/atp_rankings_all.csv?raw'
-  import { onMount } from 'svelte';
-  import * as d3 from 'd3';
-  let data = [30, 86, 168, 281, 303, 365];
+  // DATA
+  import atp from '$lib/data/rankings_atp/atp_rankings_all.json';
+  import wta from '$lib/data/rankings_wta/wta_rankings_all.json';
 
-  let el;
-
-  onMount(() => {
-    d3.select(el)
-      .selectAll('div')
-      .data(data)
-      .enter()
-      .append('div')
-      .style('width', function (d) {
-        return d + 'px';
-      })
-      .text(function (d) {
-        return d;
-      });
-  });
-
-  // TODO: Example only
-  let anotherData;
-  onMount(
-    async () => {
-      // anotherData = await d3.csv('https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-m-matches.csv')
-      anotherData = await d3.csv('../data/data.csv')
-    }
-  )
-  // $: console.log(anotherData)
-  // $: console.log(testdata) // todo use papaparse
+  // COMPONENTS
+  import { Tabs, TabItem } from 'flowbite-svelte';
+  import Chart from '$lib/bar-chart-race/Chart.svelte';
 </script>
 
 <svelte:head>
@@ -39,30 +13,32 @@
   <meta name="description" content="Rankings page" />
 </svelte:head>
 
-<div class="content">
-  <h1 class="text-gray-900 dark:text-gray-200">
+<section class="content">
+  <h1 class="text-gray-700 dark:text-gray-200 pb-6">
     Rankings
   </h1>
 
-  <!-- TODO: Remove/Update this - Example only -->
-  <h2>Example D3 stuff</h2>
-  <div bind:this={el} class="chart" />
-</div>
+  <Tabs
+    class="w-full justify-center"
+    activeClasses="inline-block text-sm font-medium text-center disabled:cursor-not-allowed py-3 px-4 text-white bg-violet-600 rounded-lg"
+    inactiveClasses="inline-block text-sm font-medium text-center disabled:cursor-not-allowed py-3 px-4 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white border border-gray-200 dark:border-gray-700"
+    divider={false}
+  >
+    <TabItem open>
+      <span slot="title"> Association of Tennis Professionals (ATP)</span>
+      <Chart keyframes={atp} />
+    </TabItem>
+    <TabItem>
+      <span slot="title">Women's Tennis Association (WTA)</span>
+      <Chart keyframes={wta} />
+    </TabItem>
+  </Tabs>
+</section>
 
 <style>
   .content {
     width: 100%;
     max-width: var(--column-width);
     margin: var(--column-margin-top) auto 0 auto;
-  }
-
-  /* TODO: Example only */
-  .chart :global(div) {
-    font: 10px sans-serif;
-    background-color: steelblue;
-    text-align: right;
-    padding: 3px;
-    margin: 1px;
-    color: white;
   }
 </style>
