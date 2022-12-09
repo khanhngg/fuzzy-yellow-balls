@@ -25,7 +25,7 @@
     divider={false}
   >
     <TabItem open>
-      <span slot="title"> Association of Tennis Professionals (ATP)</span>
+      <span slot="title">Association of Tennis Professionals (ATP)</span>
       <Chart keyframes={atp} />
     </TabItem>
     <TabItem>

@@ -4,13 +4,22 @@
 
 Interactive data visualization for tennis stats.
 
-## Tech
+## Technologies
 
-- SvelteKit
-- TypeScript
-- D3.js
+### 1. Frontend
+  - Svelte/SvelteKit
+  - TypeScript
+  - D3.js
+  - Tailwind/Flowbite
 
-# Instructions related to `create-svelte`
+### 2. Database
+  - MySQL
+
+### 3. Data preprocessing
+  - Python
+
+---
+## Instructions related to `create-svelte`
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
