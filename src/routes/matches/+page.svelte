@@ -8,6 +8,7 @@
   import Return from './Return.svelte';
   import NetPoint from './NetPoint.svelte';
   import ShotDirection from './ShotDirection.svelte';
+  import loadOptions from '$lib/players';
 
   let player1: string;
   let player2: string;
@@ -49,6 +50,23 @@
       selectedMatches = [];
     }
   };
+
+  const selectPlayer = (
+    { detail }: { detail: { index: number; label: string; value: string } },
+    player: number
+  ) => {
+    console.log({ detail, player });
+    switch (player) {
+      case 1:
+        player1 = detail.value;
+        break;
+      case 2:
+        player2 = detail.value;
+        break;
+      default:
+        break;
+    }
+  };
 </script>
 
 <svelte:head>
@@ -60,12 +78,22 @@
   <h1 class="text-gray-900 dark:text-gray-200">Matches</h1>
   <form on:submit|preventDefault={getMatches} class="">
     <div class="flex flex-row gap-3 justify-between items-center mb-3">
-      <div class="w-full">
-        <Input type="text" bind:value={player1} placeholder="Player 1" />
+      <div class="w-full text-gray-900">
+        <Select
+          {loadOptions}
+          on:select={(e) => selectPlayer(e, 1)}
+          placeholder="Search for player"
+        />
+        <!-- <Input type="text" bind:value={player1} placeholder="Player 1" /> -->
       </div>
       <div>VS</div>
-      <div class="w-full">
-        <Input type="text" bind:value={player2} placeholder="Player 2" />
+      <div class="w-full text-gray-900">
+        <Select
+          {loadOptions}
+          on:select={(e) => selectPlayer(e, 2)}
+          placeholder="Search for player"
+        />
+        <!-- <Input type="text" bind:value={player2} placeholder="Player 2" /> -->
       </div>
       <Button type="submit">Search</Button>
     </div>
