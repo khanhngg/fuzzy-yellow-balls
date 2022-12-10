@@ -29,7 +29,7 @@
         <a class="text-gray-300" href="/surfaces">Surfaces</a>
       </li>
       <li class:active={$page.url.pathname === '/rankings'}>
-        <a class="text-gray-300" href="/rankings">Rankings</a>
+        <a class="text-gray-300" href="/rankings" data-sveltekit-preload-data>Rankings</a>
       </li>
     </ul>
     <svg viewBox="0 0 2 3" aria-hidden="true">

@@ -33,7 +33,7 @@
       <Chart tour={'atp'} />
     </TabItem>
     <TabItem>
-      <span slot="title"> Association of Tennis Professionals (ATP)</span>
+      <span slot="title"> Women Tennis Association (WTA)</span>
       <Chart tour={'wta'} />
     </TabItem>
   </Tabs>

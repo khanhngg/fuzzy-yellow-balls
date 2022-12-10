@@ -36,7 +36,7 @@
       See how top players on each surfaces perform
     </p>
   </Card>
-  <Card class="text-center" size="md" href="/rankings">
+  <Card class="text-center" size="md" href="/rankings" data-sveltekit-preload-data>
     <Icon icon="fa6-solid:chart-bar" class="icon" />
     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rankings</h5>
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
