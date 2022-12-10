@@ -111,7 +111,7 @@
         />
         <!-- <Input type="text" bind:value={player2} placeholder="Player 2" /> -->
       </div>
-      <Button type="submit">Search</Button>
+      <Button type="submit" btnClass="text-center font-medium focus:ring-4 focus:outline-none inline-flex items-center justify-center px-5 py-2.5 text-sm bg-violet-700 hover:bg-violet-800 focus:ring-violet-300 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800 rounded-lg text-white bg-violet-600">Search</Button>
     </div>
   </form>
   {#if matches.length}
@@ -139,7 +139,13 @@
     </div>
   {/if}
   {#if 0 < selectedMatches.length && selectedMatches.length < 4}
-    <Tabs style="pill">
+    <Tabs
+      class="w-full justify-center"
+      contentClass="p-4 mt-4"
+      activeClasses="inline-block text-sm font-medium text-center disabled:cursor-not-allowed py-3 px-4 text-white bg-violet-600 rounded-lg"
+      inactiveClasses="inline-block text-sm font-medium text-center disabled:cursor-not-allowed py-3 px-4 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white border border-gray-200 dark:border-gray-700"
+      divider={false}
+    >
       <TabItem open>
         <span slot="title">Overview</span>
         <Overview {player1} {player2} matches={selectedMatches} />
